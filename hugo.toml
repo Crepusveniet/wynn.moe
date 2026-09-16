@@ -17,6 +17,20 @@ hasCJKLanguage = true
   blog = '/p/:contentbasename/'
 [markup.goldmark.renderer]
   unsafe = true
+[params.comments]
+  enabled = true
+  repo = 'crepusveniet/wynn.moe'
+  repoId = 'R_kgDOUc53Ww'
+  category = 'Announcements'
+  categoryId = 'DIC_kwDOUc53W84DFtUb'
+  mapping = 'pathname'
+  strict = 0
+  reactionsEnabled = 1
+  emitMetadata = 0
+  inputPosition = 'top'
+  theme = 'noborder_light'
+  lang = 'en'
+  loading = 'lazy'
 [params.article]
   license = 'CC BY-NC-SA 4.0'
 [markup.highlight]

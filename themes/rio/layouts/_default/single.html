@@ -22,6 +22,7 @@
     {{ with site.Params.article.license }}<p class="license"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">{{ . }}</a></p>{{ end }}
     <nav class="article-nav" aria-label="文章导航">{{ with .NextInSection }}<a href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ end }}{{ with .PrevInSection }}<a href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ end }}</nav>
     <a class="small command-link" href="{{ "blog/" | relLangURL }}"><span aria-hidden="true">$ </span>cd ~/blog</a>
+    {{ partial "comments.html" . }}
   {{ end }}
 {{ partial "pane-close.html" . }}
 {{ end }}

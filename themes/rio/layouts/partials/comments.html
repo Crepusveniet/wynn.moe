@@ -1,0 +1,21 @@
+{{ if and site.Params.comments.enabled (not hugo.IsServer) }}
+{{ with site.Params.comments }}
+<section class="comments" aria-label="Comments">
+  <script src="https://giscus.app/client.js"
+    data-repo="{{ .repo }}"
+    data-repo-id="{{ .repoId }}"
+    data-category="{{ .category }}"
+    data-category-id="{{ .categoryId }}"
+    data-mapping="{{ .mapping }}"
+    data-strict="{{ .strict }}"
+    data-reactions-enabled="{{ .reactionsEnabled }}"
+    data-emit-metadata="{{ .emitMetadata }}"
+    data-input-position="{{ .inputPosition }}"
+    data-theme="{{ .theme }}"
+    data-lang="{{ .lang }}"
+    data-loading="{{ .loading }}"
+    crossorigin="anonymous"
+    async></script>
+</section>
+{{ end }}
+{{ end }}
