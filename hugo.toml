@@ -28,7 +28,7 @@ hasCJKLanguage = true
   reactionsEnabled = 0
   emitMetadata = 0
   inputPosition = 'top'
-  theme = 'https://wynn.moe/css/giscus.css'
+  theme = 'https://wynn.moe/css/giscus.css?v=2'
   lang = 'en'
   loading = 'lazy'
 [params.article]
