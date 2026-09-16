@@ -96,9 +96,11 @@ main{
 .gsc-comments-count,.gsc-comments-count-separator{font-weight:400}
 .gsc-comment-box:not(.gsc-comment-box-is-reply),.gsc-comment-box-tabs,.gsc-comment-box-write,.gsc-comment-box-textarea,.gsc-comment-box-textarea-extras,.gsc-comment-content,.gsc-replies,.gsc-reply-box,.gsc-pagination-button,.gsc-social-reaction-summary-item,.Box,.Box-header,.flash,.rounded-1,.rounded-2,.btn{border-radius:0!important}
 .gsc-comment-box-tabs{background:#e9eddf}
+.gsc-comment-box-tabs *{border-radius:0!important}
 .gsc-comment-box-tabs button{min-height:0!important;padding:5px 10px!important;font:12px/1.2 var(--font-family-monospace)}
 .gsc-comment-box-main,.gsc-comment-box-bottom{margin:.5rem}
 .gsc-comment-box-textarea{min-height:64px;background:#faf9f5}
 .gsc-comment-box-textarea-extras{padding:4px 8px}
 .gsc-comment-box-write:focus-within{box-shadow:0 0 0 1px #4a603b}
 .btn{padding:3px 10px;font:12px/1.5 var(--font-family-monospace);font-weight:400;box-shadow:none}
+.avatar,.gsc-comment-author-avatar img,.gsc-reply-author-avatar img{border-radius:0!important}
