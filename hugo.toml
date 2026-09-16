@@ -14,7 +14,7 @@ hasCJKLanguage = true
   tag = 'tags'
   category = 'categories'
 [permalinks]
-  blog = '/p/:contentbasename/'
+  blog = '/blog/:contentbasename/'
 [markup.goldmark.renderer]
   unsafe = true
 [params.comments]
