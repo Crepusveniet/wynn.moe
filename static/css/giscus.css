@@ -4,6 +4,8 @@
   --font-family-default:var(--font-family-sans)
 }
 
+*,*::before,*::after{border-radius:0!important}
+
 main{
   --color-prettylights-syntax-comment:#66695f;
   --color-prettylights-syntax-constant:#4a603b;
