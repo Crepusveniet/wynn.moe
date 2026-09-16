@@ -112,4 +112,5 @@ a{color:inherit}
 .terminal{max-width:580px;margin:0 auto;padding:16px 18px;border:1px solid var(--line);background:var(--soft);font-family:var(--mono);font-size:13px;line-height:1.8;text-align:left;overflow-x:auto}
 .terminal code{font:inherit;white-space:nowrap}
 .terminal .prompt{color:var(--accent)}
-.comments{margin-top:32px}
+.comments{margin-top:32px;padding-top:14px;border-top:1px solid var(--soft)}
+.comments>h2{margin:0 0 12px;font:12px var(--mono);font-weight:400;color:var(--muted)}

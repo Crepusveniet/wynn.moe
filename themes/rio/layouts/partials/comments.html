@@ -1,6 +1,7 @@
 {{ if and site.Params.comments.enabled (not hugo.IsServer) }}
 {{ with site.Params.comments }}
 <section class="comments" aria-label="Comments">
+  <h2>comments</h2>
   <script src="https://giscus.app/client.js"
     data-repo="{{ .repo }}"
     data-repo-id="{{ .repoId }}"

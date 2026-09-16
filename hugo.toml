@@ -25,10 +25,10 @@ hasCJKLanguage = true
   categoryId = 'DIC_kwDOUc53W84DFtUb'
   mapping = 'pathname'
   strict = 0
-  reactionsEnabled = 1
+  reactionsEnabled = 0
   emitMetadata = 0
   inputPosition = 'top'
-  theme = 'noborder_light'
+  theme = 'https://wynn.moe/css/giscus.css'
   lang = 'en'
   loading = 'lazy'
 [params.article]
