@@ -1,0 +1,7 @@
+{{ define "main" }}
+{{ partial "pane-open.html" (dict "name" (.Title | lower) "page" .) }}
+  <h1 class="sr-only">{{ .Title }}</h1>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+  {{ partial "entries.html" .Pages.ByDate.Reverse }}
+{{ partial "pane-close.html" . }}
+{{ end }}

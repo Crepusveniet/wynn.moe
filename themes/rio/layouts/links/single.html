@@ -1,0 +1,7 @@
+{{ define "main" }}
+{{ partial "pane-open.html" (dict "name" "links" "page" .) }}
+  <h1 class="sr-only">{{ .Title }}</h1>
+  {{ with .Content }}<div class="prose links-intro">{{ . }}</div>{{ end }}
+  {{ partial "friends.html" site.Data.friends.items }}
+{{ partial "pane-close.html" . }}
+{{ end }}

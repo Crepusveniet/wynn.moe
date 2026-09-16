@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="home-grid">
+  {{ partial "pane-open.html" (dict "name" "about" "class" "wide") }}
+    {{ with site.GetPage "/about" }}<div class="intro">{{ with .Params.summary }}{{ . | markdownify }}{{ else }}{{ .Summary }}{{ end }}</div>{{ end }}
+    <a class="small" href="{{ "about/" | relLangURL }}">read more →</a>
+  {{ partial "pane-close.html" . }}
+  {{ partial "pane-open.html" (dict "name" "work" "class" "narrow") }}
+    {{ range site.Data.profile.work }}<div class="row work-row"><span class="muted years">{{ .period }}</span><span>{{ with .url }}<a href="{{ . }}">{{ end }}{{ .role }}{{ with .url }}</a>{{ end }}</span></div>{{ else }}<p class="muted">None yet.</p>{{ end }}
+  {{ partial "pane-close.html" . }}
+  {{ partial "pane-open.html" (dict "name" "blog" "class" "full" "url" "blog/") }}
+    {{ partial "entries.html" (first (site.Params.homePosts | default 3) (where site.RegularPages "Section" "blog").ByDate.Reverse) }}
+  {{ partial "pane-close.html" . }}
+  {{ partial "pane-open.html" (dict "name" "projects" "class" "full") }}
+    <div class="projects">{{ range site.Data.profile.projects }}<article><h3>{{ with .url }}<a href="{{ . }}">{{ end }}{{ .name }}{{ with .url }}</a>{{ end }}</h3><p class="muted">{{ .description }}</p>{{ with .meta }}<p class="project-meta">{{ . }}</p>{{ end }}</article>{{ else }}<p class="muted">None yet.</p>{{ end }}</div>
+  {{ partial "pane-close.html" . }}
+  {{ partial "pane-open.html" (dict "name" "contact" "class" "wide") }}
+    <div class="contact-list">
+      {{ with site.Params.email }}<div class="contact-row"><span class="contact-label">mail</span><a href="mailto:{{ . }}">{{ . }}</a></div>{{ end }}
+      <div class="contact-row"><span class="contact-label">social</span><ul class="social-links">{{ range site.Data.profile.socials }}<li><a href="{{ .url }}">{{ .name }}</a></li>{{ else }}<li><a href="{{ "index.xml" | relLangURL }}">RSS feed ↗</a></li>{{ end }}</ul></div>
+    </div>
+  {{ partial "pane-close.html" . }}
+  {{ partial "pane-open.html" (dict "name" "links" "class" "narrow compact-friends" "url" "links/") }}
+    {{ partial "friends.html" (first (site.Params.homeFriends | default 4) site.Data.friends.items) }}
+  {{ partial "pane-close.html" . }}
+</div>
+{{ end }}

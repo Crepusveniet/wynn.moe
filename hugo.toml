@@ -1,0 +1,24 @@
+baseURL = 'https://wynn.moe/'
+languageCode = 'zh-CN'
+defaultContentLanguage = 'zh-cn'
+title = 'Wynn'
+theme = 'rio'
+enableRobotsTXT = true
+hasCJKLanguage = true
+[params]
+  description = 'Wynn 的个人主页。'
+  email = 'wynnzeng2010@gmail.com'
+  homePosts = 3
+  homeFriends = 4
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+[permalinks]
+  blog = '/p/:contentbasename/'
+[markup.goldmark.renderer]
+  unsafe = true
+[params.article]
+  license = 'CC BY-NC-SA 4.0'
+[markup.highlight]
+  noClasses = true
+  style = 'friendly'

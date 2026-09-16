@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="{{ site.Language.LanguageCode | default "zh-CN" }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if not .IsHome }}{{ .Title }} · {{ end }}{{ site.Title }}</title>
+  <meta name="description" content="{{ .Description | default site.Params.description }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+  {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  {{ with .OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ .RelPermalink }}">{{ end }}
+  <meta name="color-scheme" content="light">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到内容</a>
+  <div class="site">
+    <header class="site-header">
+      {{ if .IsHome }}<h1 class="wordmark">{{ site.Title }}</h1>{{ else }}<a class="wordmark" href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a>{{ end }}
+      {{ if not .IsHome }}<a class="home-link command-link" href="{{ site.Home.RelPermalink }}"><span aria-hidden="true">$ </span>cd ~</a>{{ end }}
+    </header>
+    <main id="main">{{ block "main" . }}{{ end }}</main>
+    <footer class="site-footer"><span>© {{ now.Year }} {{ site.Title }}</span><nav aria-label="页脚"><a href="{{ "archives/" | relLangURL }}">archives</a><a href="{{ "blog/" | relLangURL }}">blog</a><a href="{{ "about/" | relLangURL }}">about</a><a href="{{ "links/" | relLangURL }}">links</a><a href="{{ "index.xml" | relLangURL }}">rss ↗</a></nav></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{{ define "main" }}
+{{ $crumbs := slice
+  (dict "label" "~/" "url" "/")
+  (dict "label" "dev/null" "current" true)
+}}
+{{ partial "pane-open.html" (dict "name" "404" "crumbs" $crumbs) }}
+<section class="notfound">
+  <h1 class="notfound-code">404</h1>
+  <p class="notfound-message">页面不存在</p>
+  <div class="terminal" role="group" aria-label="终端输出">
+    <code><span class="prompt">$</span> cat /requested/page<br>cat: /requested/page: No such file or directory<br><span class="prompt">$</span> <a href="{{ site.Home.RelPermalink }}">cd ~</a></code>
+  </div>
+</section>
+{{ partial "pane-close.html" . }}
+{{ end }}

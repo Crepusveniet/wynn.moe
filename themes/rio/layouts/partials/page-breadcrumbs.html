@@ -1,0 +1,9 @@
+<nav class="breadcrumbs" aria-label="当前位置">
+  <a href="{{ "/" | relLangURL }}">~/</a>
+  {{- $parts := split (strings.Trim .RelPermalink "/") "/" -}}
+  {{- $path := "/" -}}
+  {{- range $index, $part := $parts -}}
+    {{- $path = printf "%s%s/" $path $part -}}
+    {{- if eq $index (sub (len $parts) 1) -}}<span aria-current="page">{{ $part | urls.PathUnescape }}</span>{{- else -}}<a href="{{ $path | relLangURL }}">{{ $part | urls.PathUnescape }}</a>/{{- end -}}
+  {{- end -}}
+</nav>

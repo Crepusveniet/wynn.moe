@@ -1,0 +1,27 @@
+{{ define "main" }}
+{{ $name := .Slug | default (.Title | urlize) }}
+{{ $pane := dict "name" $name "page" . }}
+{{ if eq .Section "blog" }}
+  {{ $folder := path.Base (strings.TrimSuffix "/" .File.Dir) }}
+  {{ $crumbs := slice
+    (dict "label" "~/" "url" "/")
+    (dict "label" "blog/" "url" "/blog/")
+    (dict "label" $folder "url" .RelPermalink "current" true)
+  }}
+  {{ $pane = dict "name" $folder "crumbs" $crumbs }}
+{{ end }}
+{{ partial "pane-open.html" $pane }}
+  {{ if eq .Section "blog" }}
+  <header class="article-header"><p class="eyebrow"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time> · {{ .ReadingTime }} min read</p><h1>{{ .Title }}</h1>{{ with .Description }}<p class="muted">{{ . }}</p>{{ end }}</header>
+  {{ else }}<h1 class="sr-only">{{ .Title }}</h1>{{ end }}
+  {{ if eq .Section "blog" }}{{ with .Params.image }}{{ $cover := $.Resources.GetMatch . }}{{ if $cover }}{{ if not (strings.Contains $.RawContent .) }}<img class="article-cover" src="{{ $cover.RelPermalink }}" alt="" width="{{ $cover.Width }}" height="{{ $cover.Height }}">{{ end }}{{ end }}{{ end }}{{ end }}
+  <div class="prose">{{ .Content }}</div>
+  {{ if eq .Section "blog" }}
+    {{ with .GetTerms "tags" }}<nav class="tags" aria-label="标签">{{ range . }}<a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>{{ end }}</nav>{{ end }}
+    {{ with .GetTerms "categories" }}<nav class="tags" aria-label="Categories">{{ range . }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}</nav>{{ end }}
+    {{ with site.Params.article.license }}<p class="license"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">{{ . }}</a></p>{{ end }}
+    <nav class="article-nav" aria-label="文章导航">{{ with .NextInSection }}<a href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ end }}{{ with .PrevInSection }}<a href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ end }}</nav>
+    <a class="small command-link" href="{{ "blog/" | relLangURL }}"><span aria-hidden="true">$ </span>cd ~/blog</a>
+  {{ end }}
+{{ partial "pane-close.html" . }}
+{{ end }}

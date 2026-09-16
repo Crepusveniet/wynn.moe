@@ -1,0 +1,6 @@
+{{ range . }}
+<article class="entry">
+  <div class="row"><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time></div>
+  {{ with .Description }}<p>{{ . }}</p>{{ end }}
+</article>
+{{ else }}<p class="muted">None yet.</p>{{ end }}

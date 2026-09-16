@@ -1,0 +1,5 @@
+name = 'Rio'
+description = 'A quiet, window-inspired personal Hugo theme.'
+min_version = '0.146.0'
+[author]
+  name = 'Wynn'

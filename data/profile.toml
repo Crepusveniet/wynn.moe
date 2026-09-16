@@ -1,0 +1,49 @@
+[[work]]
+period = '2025 ~ now'
+role = 'ZIA Senior High Student'
+
+[[work]]
+period = 'now'
+role = 'Founder · Liminea'
+url = 'https://liminea.com/'
+
+[[work]]
+period = 'now'
+role = 'Programmer / Game Dev'
+
+[[work]]
+period = 'now'
+role = 'Keyboardist / Music Producer'
+
+[[projects]]
+name = 'Project Xent'
+url = 'https://github.com/Project-Xent'
+description = 'A cross-platform GUI development framework.'
+meta = 'C23 · UI Framework'
+
+[[projects]]
+name = 'PhiOpedit'
+url = 'https://github.com/Crepusveniet/PhiOpedit'
+description = 'A cross-platform Phigros fanmade chart editor written in C++/Qt.'
+meta = 'C++ · Qt/QML · Rhythm Game'
+
+[[projects]]
+name = 'Project [REDACTED]'
+description = 'An unannounced game project currently in active development by Liminea.'
+meta = 'Game Dev · In Progress'
+
+[[socials]]
+name = 'GitHub'
+url = 'https://github.com/Crepusveniet'
+
+[[socials]]
+name = 'YouTube'
+url = 'https://www.youtube.com/channel/UCwWT0Vpq-TvZps_F4Go96qQ'
+
+[[socials]]
+name = 'Bilibili'
+url = 'https://space.bilibili.com/3493294048807216'
+
+[[socials]]
+name = 'Discord'
+url = 'https://discord.com/invite/auyYvz4k'

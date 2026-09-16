@@ -1,0 +1,5 @@
+<section class="pane {{ .class }}" aria-label="{{ .name }}">
+  <div class="pane-scroll" aria-hidden="true"></div>
+  <div class="pane-main">
+    <header class="pane-head"><h2>{{ with .crumbs }}<nav class="breadcrumbs" aria-label="当前位置">{{ range . }}{{ if .current }}<span aria-current="page">{{ .label }}</span>{{ else }}<a href="{{ .url | relLangURL }}">{{ .label }}</a>{{ end }}{{ end }}</nav>{{ else }}{{ with .page }}{{ partial "page-breadcrumbs.html" . }}{{ else }}~/{{ $.name }}{{ end }}{{ end }}</h2>{{ with .url }}<a href="{{ . | relLangURL }}" aria-label="查看更多 {{ $.name }}">more →</a>{{ end }}</header>
+    <div class="pane-body">

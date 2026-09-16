@@ -1,0 +1,8 @@
+<div class="friends">
+{{ range . }}
+  <a class="friend" href="{{ .url | relURL }}" rel="noopener">
+    {{ with .avatar }}<img class="avatar" src="{{ if strings.HasPrefix . "http" }}{{ . }}{{ else }}{{ . | relURL }}{{ end }}" width="56" height="56" alt="" loading="lazy">{{ else }}<span class="avatar" aria-hidden="true">{{ substr .name 0 1 }}</span>{{ end }}
+    <span class="friend-name">{{ .name }}</span>
+  </a>
+{{ else }}<p class="muted">None yet.</p>{{ end }}
+</div>
